@@ -15,7 +15,7 @@ env:
   AWS_REGION: us-east-2
   GHA_ROLE_ARN: arn:aws:iam::124666675812:role/github-actions-observability-eks
   ECR_REPOSITORY: ecommerce-app
-  CLUSTER_NAME: etechapp-eks-spj1rJJ9
+  CLUSTER_NAME: techapp-eks-spj1rJJ9
 
 jobs:
   test:

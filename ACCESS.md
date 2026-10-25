@@ -1,4 +1,4 @@
-# Access URLs — etechapp-eks-4QAQxDD3 (us-east-2)
+# Access URLs — techapp-eks-spj1rJJ9 (us-east-2)
 
 Repo: https://github.com/training-ux/observability-eks
 
@@ -19,7 +19,7 @@ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath='{.data.pas
 
 ## IAM role (GitHub Actions OIDC)
 
-`arn:aws:iam::985539781710:role/github-actions-observability-eks`
+`arn:aws:iam::124666675812:role/github-actions-observability-eks`
 
 Trusted for `repo:training-ux/observability-eks:*` via `token.actions.githubusercontent.com`.
 Mapped in `aws-auth` as `system:masters`.

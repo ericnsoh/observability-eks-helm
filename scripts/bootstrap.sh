@@ -4,7 +4,7 @@ set -euo pipefail
 # Bootstrap Argo CD on the current kube-context, then apply the root app-of-apps.
 # Prerequisites: kubectl, helm, aws cli, cluster admin access.
 
-CLUSTER_NAME="${CLUSTER_NAME:-etechapp-eks-4QAQxDD3}"
+CLUSTER_NAME="${CLUSTER_NAME:-techapp-eks-spj1rJJ9}"
 AWS_REGION="${AWS_REGION:-us-east-2}"
 REPO_URL="${REPO_URL:-https://github.com/training-ux/observability-eks.git}"
 

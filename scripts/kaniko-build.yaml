@@ -28,8 +28,8 @@ spec:
             - --context=git://github.com/training-ux/observability-eks.git#refs/heads/main
             - --context-sub-path=app
             - --dockerfile=Dockerfile
-            - --destination=985539781710.dkr.ecr.us-east-2.amazonaws.com/ecommerce:excelcloud
-            - --destination=985539781710.dkr.ecr.us-east-2.amazonaws.com/ecommerce:latest
+            - --destination=124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce:excelcloud
+            - --destination=124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce:latest
             - --cache=false
           volumeMounts:
             - name: docker-config
