@@ -25,7 +25,7 @@ spec:
         - name: kaniko
           image: gcr.io/kaniko-project/executor:v1.23.2
           args:
-            - --context=git://github.com/training-ux/observability-eks.git#refs/heads/main
+            - --context=git://github.com/ericnsoh/observability-eks.git#refs/heads/main
             - --context-sub-path=app
             - --dockerfile=Dockerfile
             - --destination=124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce:excelcloud
