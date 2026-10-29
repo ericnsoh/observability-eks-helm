@@ -110,7 +110,7 @@ jobs:
 
   deploy-status:
     name: Verify Argo CD sync (optional)
-    needs: gitops-updatei
+    needs: gitops-update
     if: ${{ vars.ARGOCD_SERVER != '' }}
     runs-on: ubuntu-latest
     steps:
