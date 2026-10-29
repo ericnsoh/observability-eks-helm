@@ -1,8 +1,8 @@
 replicaCount: 1
 
 image:
-  repository: 124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce
-  tag: "014c208"
+  repository: 124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce-app
+  tag: "ff26a71"
   pullPolicy: IfNotPresent
 
 service:
