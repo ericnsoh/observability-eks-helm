@@ -1,4 +1,4 @@
-# Access URLs — techapp-eks-spj1rJJ9 (us-east-2)
+# Access URLs — etechapp-eks-spj1rJJ9 (us-east-2)
 
 Repo: https://github.com/training-ux/observability-eks
 

@@ -4,7 +4,17 @@ set -euo pipefail
 # Bootstrap Argo CD on the current kube-context, then apply the root app-of-apps.
 # Prerequisites: kubectl, helm, aws cli, cluster admin access.
 
-CLUSTER_NAME="${CLUSTER_NAME:-techapp-eks-spj1rJJ9}"
+for command in aws kubectl helm; do
+  if ! command -v "${command}" >/dev/null 2>&1; then
+    echo "Error: required command '${command}' was not found in PATH." >&2
+    if [[ "${command}" == "helm" ]] && command -v brew >/dev/null 2>&1; then
+      echo "Install it with: brew install helm" >&2
+    fi
+    exit 1
+  fi
+done
+
+CLUSTER_NAME="${CLUSTER_NAME:-etechapp-eks-spj1rJJ9}"
 AWS_REGION="${AWS_REGION:-us-east-2}"
 REPO_URL="${REPO_URL:-https://github.com/training-ux/observability-eks.git}"
 

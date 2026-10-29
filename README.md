@@ -2,7 +2,7 @@
 
 Ecommerce cart + invoice app on Amazon EKS with **Helm**, **Argo CD**, **Prometheus**, **Grafana**, and **GitHub Actions**.
 
-Target cluster (current default): `techapp-eks-spj1rJJ9` in `us-east-2`  
+Target cluster (current default): `etechapp-eks-spj1rJJ9` in `us-east-2`  
 Image registry: `124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce`
 
 ## What you get
@@ -63,12 +63,12 @@ In the repo settings, add:
 **Option A — GitHub Actions**
 
 1. Open **Actions → Platform Bootstrap → Run workflow**
-2. Confirm cluster `techapp-eks-spj1rJJ9` / region `us-east-2`
+2. Confirm cluster `etechapp-eks-spj1rJJ9` / region `us-east-2`
 
 **Option B — local**
 
 ```bash
-export CLUSTER_NAME=techapp-eks-spj1rJJ9
+export CLUSTER_NAME=etechapp-eks-spj1rJJ9
 export AWS_REGION=us-east-2
 ./scripts/bootstrap.sh
 ```
@@ -116,7 +116,17 @@ npm start
 # open http://localhost:3000
 ```
 
+## Build the Docker image locally
+
+Run this from the repository root; the Dockerfile and build context are both under `app/`:
+
+```bash
+docker build -t ecommerce-app ./app
+```
+
 ## Manual Helm deploy (without Argo CD)
+
+Run this from the repository root (`observability-eks-helm/`):
 
 ```bash
 helm upgrade --install ecommerce ./charts/ecommerce \

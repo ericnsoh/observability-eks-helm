@@ -15,7 +15,7 @@ env:
   AWS_REGION: us-east-2
   GHA_ROLE_ARN: arn:aws:iam::124666675812:role/github-actions-observability-eks
   ECR_REPOSITORY: ecommerce-app
-  CLUSTER_NAME: techapp-eks-spj1rJJ9
+  CLUSTER_NAME: etechapp-eks-spj1rJJ9
 
 jobs:
   test:
@@ -110,7 +110,7 @@ jobs:
 
   deploy-status:
     name: Verify Argo CD sync (optional)
-    needs: gitops-update
+    needs: gitops-updatei
     if: ${{ vars.ARGOCD_SERVER != '' }}
     runs-on: ubuntu-latest
     steps:

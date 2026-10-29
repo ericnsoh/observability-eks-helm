@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: alertmanager-pagerduty
+  namespace: monitoring
+type: Opaque
+stringData:
+  routingKey: "REPLACE_ME"
