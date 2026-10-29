@@ -10,7 +10,7 @@ describe("buildInvoicePdf", () => {
       companyName: "ExcelCloud Market",
       customer: { name: "Ada", email: "ada@example.com" },
       totals,
-      logoPath: "/assets/logo.jpg",
+      logoPath: "/assets/logo.png",
     });
     const pdf = await buildInvoicePdf(invoice, defaultLogoPath());
     assert.ok(Buffer.isBuffer(pdf));

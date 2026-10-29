@@ -93,7 +93,7 @@ function buildInvoicePdf(invoice, logoFilePath) {
 }
 
 function defaultLogoPath() {
-  return path.join(__dirname, "..", "public", "assets", "logo.jpg");
+  return path.join(__dirname, "..", "public", "assets", "logo.png");
 }
 
 module.exports = { buildInvoicePdf, defaultLogoPath };

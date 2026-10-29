@@ -22,7 +22,7 @@
         "ecr:ListImages",
         "ecr:DescribeImages"
       ],
-      "Resource": "arn:aws:ecr:us-east-2:124666675812:repository/ecommerce"
+      "Resource": "arn:aws:ecr:us-east-2:124666675812:repository/ecommerce-app"
     },
     {
       "Sid": "EKSAccess",

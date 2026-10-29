@@ -68,7 +68,7 @@ app.post("/api/checkout", async (req, res) => {
       companyName: COMPANY_NAME,
       customer,
       totals,
-      logoPath: "/assets/logo.jpg",
+      logoPath: "/assets/logo.png",
     });
 
     const pdfBuffer = await buildInvoicePdf(invoice, defaultLogoPath());

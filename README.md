@@ -24,7 +24,7 @@ Image registry: `124666675812.dkr.ecr.us-east-2.amazonaws.com/ecommerce`
 
 ### Replace the logo
 
-Current logo: `app/public/assets/logo.jpg` (ExcelCloud).
+Current logo: `app/public/assets/logo.png` (ExcelCloud).
 
 ### Invoice PDF download
 

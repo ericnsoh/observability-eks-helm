@@ -16,7 +16,14 @@ done
 
 CLUSTER_NAME="${CLUSTER_NAME:-etechapp-eks-spj1rJJ9}"
 AWS_REGION="${AWS_REGION:-us-east-2}"
-REPO_URL="${REPO_URL:-https://github.com/ericnsoh/observability-eks.git}"
+REPO_URL="${REPO_URL:-https://github.com/ericnsoh/observability-eks-helm.git}"
+REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+ROOT_APP_MANIFEST="${REPO_ROOT}/gitops/argocd/root-app.yaml"
+
+if [[ ! -f "${ROOT_APP_MANIFEST}" ]]; then
+  echo "Error: root Application manifest not found: ${ROOT_APP_MANIFEST}" >&2
+  exit 1
+fi
 
 echo "==> Updating kubeconfig for ${CLUSTER_NAME} (${AWS_REGION})"
 aws eks update-kubeconfig --name "${CLUSTER_NAME}" --region "${AWS_REGION}"
@@ -38,8 +45,8 @@ kubectl -n argocd rollout status deploy/argocd-server --timeout=300s
 
 echo "==> Applying root Application (repo: ${REPO_URL})"
 # Allow editing the repo URL without committing secrets into bootstrap
-sed "s|https://github.com/ericnsoh/observability-eks.git|${REPO_URL}|g" \
-  gitops/argocd/root-app.yaml | kubectl apply -f -
+sed "s|^[[:space:]]*repoURL:.*|    repoURL: ${REPO_URL}|" \
+  "${ROOT_APP_MANIFEST}" | kubectl apply -f -
 
 echo
 echo "Bootstrap complete."
